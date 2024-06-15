@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Image Classifier</h1>
+    </header>
+    <main>
+        <div class="card">
+            <div class="image-wrapper">
+                <img src="{{ url_for('static', filename='trash.jpg') }}" alt="Illustration">
+            </div>
+            <div class="button-container">
+                <input type="file" id="imageUpload" accept="image/*" onchange="displayImage()">
+                <button onclick="classifyImage()" class="classify-btn">Classify</button>
+            </div>
+        </div>
+        <div id="result" class="result"></div>
+        <div id="imageContainer" class="image-container"></div>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
